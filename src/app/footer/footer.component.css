@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://use.fontawesome.com/releases/v5.15.3/css/all.css");
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Montserrat, sans-serif;
+}
+
+.footer-top-wrapper {
+    background: #007BFF;
+}
+
+.footer-top {
+    margin: auto;
+    color: #fff;
+    display: flex;
+    padding: 50px 0;
+}
+
+.footer-top p {
+    line-height: 1.5;
+}
+
+.footer-top h2 {
+    font-size: 16px;
+    color: white;
+    border-left: 3px solid #fff;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.footer-top article {
+    padding: 0 80px;
+    flex-basis: 33%;
+}
+
+.footer-top i {
+    padding-right: 30px;
+    margin-top: 10px;
+}
+
+.footer-top article:last-child p {
+    border-bottom: 1px solid rgba(100, 96, 96, 0.3);
+    padding-bottom: 3px;
+}
+
+.footer-bottom-wrapper {
+    background: #007BFF;
+}
+
+.footer-bottom {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    font-weight: 600;
+}
+
+.footer-bottom p {
+    color: #fff;
+    font-size: 13px;
+}
+
+.footer-bottom ul {
+    display: flex;
+}
+
+.footer-bottom li {
+    list-style: none;
+    padding-right: 20px;
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
