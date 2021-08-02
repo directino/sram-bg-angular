@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "sram-bg": {
+      "hosting": {
+        "sram-bg-angular": [
+          "sram-bg"
+        ]
+      }
+    }
+  }
+}

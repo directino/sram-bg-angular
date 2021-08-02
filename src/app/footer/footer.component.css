@@ -12,8 +12,10 @@ h1, h2, h3, h4, h5, h6 {
 .footer-top {
     margin: auto;
     color: #fff;
-    display: flex;
     padding: 50px 0;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
 }
 
 .footer-top p {
@@ -29,8 +31,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-top article {
-    padding: 0 80px;
-    flex-basis: 33%;
+    flex-basis: 25%;
+    padding: 0 30px;
 }
 
 .footer-top i {
@@ -49,20 +51,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-bottom {
     margin: auto;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 80px;
+    padding: 10px 10%;
     font-weight: 600;
 }
 
 .footer-bottom p {
     color: #fff;
     font-size: 13px;
-}
-
-.footer-bottom ul {
-    display: flex;
 }
 
 .footer-bottom li {

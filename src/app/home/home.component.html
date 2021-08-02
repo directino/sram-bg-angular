@@ -1,0 +1,12 @@
+<div class="main">
+    <div class="jumbotron">
+        <h1>Стена на срама</h1>
+        <p>Искате да купите нещо от olx.bg или bazar.bg, но ви е страх от некоректни продавачи. Потърсете ги на нашата
+            стена на срама! Вече сте сте били измамен? Предупредете за безсрамника тук и помогнете на бъдещите жертви.
+        </p>
+    </div>
+    <article *ngFor="let scammer of scammers | async">
+        <p>Име: {{scammer.firstName}} {{scammer.secondName}}, Град/село: {{scammer.city}}, Тел. {{scammer.phone}}</p>
+        <a [routerLink]="['/scammers', scammer.id]">Описание</a>
+    </article>
+</div>

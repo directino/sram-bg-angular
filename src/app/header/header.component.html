@@ -1,13 +1,35 @@
 <header>
+    <div *ngIf="auth.user | async as user; else showLogin">
+        <h1>Hello {{ user.displayName }}!</h1>
+        <button (click)="logout()">Logout</button>
+      </div>
+      <ng-template #showLogin>
+        <p>Please login.</p>
+        <button (click)="login()">Login with Google</button>
+      </ng-template>
+
+
+
     <section class="header-top">
         <div class="logo">
-            <h1>Sram.bg - потребителят отвръща на удара</h1>
+            <h1><a routerLink="/">Sram.bg - потребителят отвръща на удара</a></h1>
         </div>
-        <nav>
+        <nav *ngIf="auth.user | async as user; else notAuth">
             <ul>
-                <li><a routerLink="/login">ВХОД<i class="fas fa-chevron-down"></i></a></li>
-                <li><a routerLink="/register">РЕГИСТРАЦИЯ<i class="fas fa-chevron-down"></i></a></li>
+                <li><p>Здравей, {{ user.displayName }}!</p></li>
+                <li><a routerLink="/create">Подай сигнал</a></li>
+                <li><a routerLink="/my-posts">Моите сигнали</a></li>
+                <li><a routerLink="/profile">Профил</a></li>
+                <li><a routerLink="/logout">Изход</a></li>
             </ul>
         </nav>
+        <ng-template #notAuth>
+            <nav>
+                <ul>
+                    <li><a routerLink="/login">ВХОД</a></li>
+                    <li><a routerLink="/register">РЕГИСТРАЦИЯ</a></li>
+                </ul>
+            </nav>
+          </ng-template>
     </section>
 </header>
