@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="brand-title">Регистрация</div>
+    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)" class="inputs">
+      <label for="email">Имейл</label>
+      <input (ngModel)="email" type="email" name="email"
+      placeholder="example@test.com" required email />
+      <label for="password">Парола</label>
+      <input (ngModel)="password" type="password" name="password"
+      placeholder="Мин 6 символа" required [minlength]="6" />
+      <label for="repeatPassword">Повторете паролата</label>
+      <input (ngModel)="repeatPassword" type="password" name="repeatPassword"
+      placeholder="Мин 6 символа" required [minlength]="6" />
+      <button type="submit" [disabled]="!formData.valid">РЕГИСТРАЦИЯ</button>
+    </form>
+    <br>
+    <div>Вече сте регистриран? Моля използвайте <a routerLink="/login">Вход</a>!</div>
+  </div>
