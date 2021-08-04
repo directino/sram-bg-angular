@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DetailComponent } from './detail/detail.component';
 import { HomeComponent } from './home/home.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
@@ -12,6 +14,14 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'my-posts',
+    component: MyPostsComponent
+  },
+  {
+    path: 'scammers/:id',
+    component: DetailComponent
   },
   {
     path: '**',

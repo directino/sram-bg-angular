@@ -16,6 +16,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 60px;
     display: flex;
     justify-content: center;
+    padding-bottom: 0;
 }
 
 .footer-top p {
@@ -58,18 +59,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-bottom p {
     color: #fff;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .footer-bottom li {
     list-style: none;
     padding-right: 20px;
-}
-
-.footer-bottom a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 12px;
 }
 
 a {

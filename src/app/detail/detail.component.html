@@ -1,0 +1,27 @@
+<div class="main">
+    <div class="jumbotron">
+        <h1>Описание на измамата</h1>
+        <p>Преди да бъдат публикувани сигналите се проверяват от модератор. Одобряват се само сигнали с приложени
+            убедителни доказателства (документи, скрийншоти, записи, др.). Всеки, който се чувства несправедливо
+            обвинен, може да поиска изтриване на сигнала от формата "Връзка с нас", като приложи съответните
+            доказателства.
+        </p>
+    </div>
+    <section class="card" >
+        <article class="top">
+            <div class="info">
+                <p>{{ (scammer | async)?.firstName }} {{ (scammer | async)?.secondName }}</p>
+                <p>от {{ (scammer | async)?.city }}</p>
+                <p>тел. {{ (scammer | async)?.phone }}</p>
+            </div>
+            <div class="img"><img
+                    src="https://static7.depositphotos.com/1003625/753/i/950/depositphotos_7530039-stock-photo-shame.jpg"
+                    alt=""></div>
+        </article>
+        <article class="bottom">
+            <p>Описание на измамата:</p>
+            <p>{{ (scammer | async)?.description }}</p>
+        </article>
+    </section>
+    <button (click)="backClicked()">Назад</button>
+</div>

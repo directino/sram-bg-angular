@@ -11,6 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DetailComponent } from './detail/detail.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DetailComponent,
+    MyPostsComponent
   ],
   imports: [
     BrowserModule,
