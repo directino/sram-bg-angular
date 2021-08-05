@@ -13,6 +13,9 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailComponent } from './detail/detail.component';
 import { MyPostsComponent } from './my-posts/my-posts.component';
+import { CreateComponent } from './create/create.component';
+import { ContactComponent } from './contact/contact.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { MyPostsComponent } from './my-posts/my-posts.component';
     HomeComponent,
     NotFoundComponent,
     DetailComponent,
-    MyPostsComponent
+    MyPostsComponent,
+    CreateComponent,
+    ContactComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
