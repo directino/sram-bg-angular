@@ -19,7 +19,7 @@ export class MyPostsComponent implements OnInit {
   }  
 
   deleteObject(itemKey:any) {
-    this.db.object('scammers/' + itemKey).remove();
+    this.db.list('scammers/' + itemKey).remove();
    }
   
   ngOnInit(): void {

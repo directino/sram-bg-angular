@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UserModule } from './user/user.module';
+import { FormsModule }   from '@angular/forms';
 
 // import { environment } from 'src/environments/environment';
 // import { AngularFireModule } from '@angular/fire';
@@ -33,6 +34,7 @@ import { EditComponent } from './edit/edit.component';
   imports: [
     BrowserModule,
     UserModule,
+    FormsModule,
     AppRoutingModule,
     // AngularFireModule.initializeApp(environment.firebase),
   ],
