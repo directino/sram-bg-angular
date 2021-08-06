@@ -1,1 +1,18 @@
-<p>edit works!</p>
+<div class="container">
+    <div class="brand-title">Информация за безсрамника</div>
+    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)" class="inputs">
+      <label for="phone">Телефон</label>
+      <input (ngModel)="phone" type="text" pattern="[0-9]*" name="phone"
+      placeholder="088*******" value="{{ (scammer | async)?.phone }}" required />
+      <label for="firstName">Име</label>
+      <input (ngModel)="firstName " type="text" name="firstName" value="{{ (scammer | async)?.firstName }}" required  />
+      <label for="repeatPassword">Фамилия</label>
+      <input (ngModel)="secondName" type="text" name="secondName" value="{{ (scammer | async)?.secondName }}" required />
+      <label for="city">Град/село</label>
+      <input (ngModel)="city" type="text" name="city" value="{{ (scammer | async)?.city }}" required  />
+      <label for="description">Опишете измамата</label>
+      <input (ngModel)="description" type="textarea" name="description" value="{{ (scammer | async)?.description }}" required />
+      <br><br>
+      <button type="submit" [disabled]="!formData.valid">ВЪВЕДИ</button>
+    </form>
+  </div>
