@@ -37,13 +37,12 @@ const routes: Routes = [
   {
     path: 'scammers/:id',
     component: DetailComponent,
-    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: belongsToAccount }
   },
   {
     path: 'edit/:id',
     component: EditComponent,
     canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin }
+    data: { authGuardPipe: redirectUnauthorizedToLogin, belongsToAccount }
   },
   {
     path: 'contact',

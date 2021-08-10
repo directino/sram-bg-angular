@@ -2,17 +2,34 @@
     <div class="brand-title">Информация за безсрамника</div>
     <form #formData='ngForm' (ngSubmit)="onSubmit(formData)" class="inputs">
       <label for="phone">Телефон</label>
-      <input (ngModel)="phone" type="text" pattern="[0-9]*" name="phone"
-      placeholder="088*******" value="{{ (scammer | async)?.phone }}" required />
+      <input ngModel #phone="ngModel" type="text" pattern="[0-9]*" name="phone"
+      placeholder="088*******" value="{{ (scammer | async)?.phone }}" minlength="9" required />
+      <div *ngIf="phone.touched">
+        <p *ngIf="phone.errors?.required">Полето е задължително!</p>
+        <p *ngIf="phone.errors?.pattern">Разрешени са само цифри!</p>
+        <p *ngIf="phone.errors?.minlength">Минимум 9 символа!</p>
+      </div>
       <label for="firstName">Име</label>
-      <input (ngModel)="firstName " type="text" name="firstName" value="{{ (scammer | async)?.firstName }}" required  />
-      <label for="repeatPassword">Фамилия</label>
-      <input (ngModel)="secondName" type="text" name="secondName" value="{{ (scammer | async)?.secondName }}" required />
+      <input ngModel #firstName="ngModel" type="text" name="firstName" value="{{ (scammer | async)?.firstName }}" required  />
+      <div *ngIf="firstName.touched">
+        <p *ngIf="firstName.errors?.required">Полето е задължително!</p>
+      </div>
+      <label for="secondName">Фамилия</label>
+      <input ngModel #secondName="ngModel" type="text" name="secondName" value="{{ (scammer | async)?.secondName }}" required />
+      <div *ngIf="secondName.touched">
+        <p *ngIf="secondName.errors?.required">Полето е задължително!</p>
+      </div>
       <label for="city">Град/село</label>
-      <input (ngModel)="city" type="text" name="city" value="{{ (scammer | async)?.city }}" required  />
+      <input ngModel #city="ngModel" type="text" name="city" value="{{ (scammer | async)?.city }}" required  />
+      <div *ngIf="city.touched">
+        <p *ngIf="city.errors?.required">Полето е задължително!</p>
+      </div>
       <label for="description">Опишете измамата</label>
-      <input (ngModel)="description" type="textarea" name="description" value="{{ (scammer | async)?.description }}" required />
+      <input ngModel #description="ngModel" type="textarea" name="description" value="{{ (scammer | async)?.description }}" required />
+      <div *ngIf="description.touched">
+        <p *ngIf="description.errors?.required">Полето е задължително!</p>
+      </div>
       <br><br>
-      <button type="submit" [disabled]="!formData.valid">ВЪВЕДИ</button>
+      <button type="submit">ВЪВЕДИ</button>
     </form>
   </div>

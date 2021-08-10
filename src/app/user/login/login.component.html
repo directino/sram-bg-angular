@@ -2,12 +2,20 @@
     <div class="brand-title">Вход</div>
     <form #formData='ngForm' (ngSubmit)='onSubmit(formData)' class="inputs">
         <label for="email">Имейл</label>
-        <input (ngModel)="email" type="email" name="email"
-            placeholder="example@test.com" required email autocomplete="on" />
+        <input ngModel #email="ngModel" type="email" name="email" placeholder="example@test.com" required email
+            autocomplete="on" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+        <div *ngIf="email.touched">
+            <p *ngIf="email.errors?.required">Полето е задължително!</p>
+            <p *ngIf="email.errors?.pattern">Това не е валиден имейл!</p>
+        </div>
         <label for="password">Парола</label>
-        <input (ngModel)="password" type="password" name="password"
-            placeholder="Мин 6 символа" required [minlength]="6" autocomplete="on" />
-        <button type="submit" [disabled]="!formData.valid">ВХОД</button>
+        <input ngModel #password="ngModel" type="password" name="password" placeholder="Мин 6 символа" required
+            minlength="6" autocomplete="on" />
+        <div *ngIf="password.touched">
+            <p *ngIf="password.errors?.required">Полето за парола не трябва да е празно!</p>
+            <p *ngIf="password.errors?.minlength">Паролата трябва да е минимум 6 символа!</p>
+        </div>
+        <button type="submit">ВХОД</button>
     </form>
     <br>
     <div>Не сте регистриран? Моля използвайте <a routerLink="/register">Регистрация</a>!</div>

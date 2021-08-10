@@ -2,16 +2,33 @@
     <div class="brand-title">Информация за безсрамника</div>
     <form #formData='ngForm' (ngSubmit)="onSubmit(formData)" class="inputs">
       <label for="phone">Телефон</label>
-      <input (ngModel)="phone" type="text" pattern="[0-9]*" name="phone"
-      placeholder="088*******" required />
+      <input ngModel #phone="ngModel" type="text" pattern="[0-9]*" name="phone"
+      placeholder="088*******" minlength="9" required />
+      <div *ngIf="phone.touched">
+        <p *ngIf="phone.errors?.required">Полето е задължително!</p>
+        <p *ngIf="phone.errors?.pattern">Разрешени са само цифри!</p>
+        <p *ngIf="phone.errors?.minlength">Минимум 9 символа!</p>
+      </div>
       <label for="firstName">Име</label>
-      <input (ngModel)="firstName" type="text" name="firstName" required  />
-      <label for="repeatPassword">Фамилия</label>
-      <input (ngModel)="secondName" type="text" name="secondName" required />
+      <input ngModel #firstName="ngModel" type="text" name="firstName" required  />
+      <div *ngIf="firstName.touched">
+        <p *ngIf="firstName.errors?.required">Полето е задължително!</p>
+      </div>
+      <label for="secondName">Фамилия</label>
+      <input ngModel #secondName="ngModel" type="text" name="secondName" required />
+      <div *ngIf="secondName.touched">
+        <p *ngIf="secondName.errors?.required">Полето е задължително!</p>
+      </div>
       <label for="city">Град/село</label>
-      <input (ngModel)="city" type="text" name="city" required  />
+      <input ngModel #city="ngModel" type="text" name="city" required  />
+      <div *ngIf="city.touched">
+        <p *ngIf="city.errors?.required">Полето е задължително!</p>
+      </div>
       <label for="description">Опишете измамата</label>
-      <input (ngModel)="description" type="textarea" name="description" required />
+      <input ngModel #description="ngModel" type="textarea" name="description" required />
+      <div *ngIf="description.touched">
+        <p *ngIf="description.errors?.required">Полето е задължително!</p>
+      </div>
       <br><br>
       <button type="submit" [disabled]="!formData.valid">ВЪВЕДИ</button>
     </form>

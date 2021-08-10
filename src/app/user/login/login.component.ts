@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: UserService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   onSubmit(formData: any) {
     if (formData.valid) {

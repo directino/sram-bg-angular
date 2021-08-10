@@ -70,3 +70,7 @@ button {
 button:hover {
   box-shadow: none;
 }
+
+p {
+  color: red;
+}
