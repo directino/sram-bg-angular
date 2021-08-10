@@ -24,12 +24,12 @@ export class EditComponent implements OnInit {
   constructor(private route: ActivatedRoute, private db: AngularFireDatabase, private afAuth: AngularFireAuth, private router: Router) {
     this.id = this.route.snapshot.paramMap.get('id');
     this.scammer = db.object('scammers/' + this.id).valueChanges();
-    
-   } 
+
+  }
 
   ngOnInit() {
-    
-   }
+
+  }
 
   onSubmit(formData: any) {
     if (formData.valid) {

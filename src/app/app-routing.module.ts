@@ -7,6 +7,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { CreateComponent } from './create/create.component';
 import { ContactComponent } from './contact/contact.component';
 import { EditComponent } from './edit/edit.component';
+import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard'
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 
 const routes: Routes = [
   {
@@ -20,11 +23,15 @@ const routes: Routes = [
   },
   {
     path: 'create',
-    component: CreateComponent
+    component: CreateComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin }
   },
   {
     path: 'my-posts',
-    component: MyPostsComponent
+    component: MyPostsComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin }
   },
   {
     path: 'scammers/:id',
@@ -32,7 +39,9 @@ const routes: Routes = [
   },
   {
     path: 'edit/:id',
-    component: EditComponent
+    component: EditComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin }
   },
   {
     path: 'contact',
