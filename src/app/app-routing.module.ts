@@ -7,9 +7,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { CreateComponent } from './create/create.component';
 import { ContactComponent } from './contact/contact.component';
 import { EditComponent } from './edit/edit.component';
-import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard'
+import { AngularFireAuthGuard, redirectUnauthorizedTo, hasCustomClaim } from '@angular/fire/auth-guard'
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const belongsToAccount = (next: any) => hasCustomClaim(`account-${next.params.id}`);
 
 const routes: Routes = [
   {
@@ -35,7 +36,8 @@ const routes: Routes = [
   },
   {
     path: 'scammers/:id',
-    component: DetailComponent
+    component: DetailComponent,
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: belongsToAccount }
   },
   {
     path: 'edit/:id',
