@@ -46,3 +46,9 @@ article a:hover {
     background: white;
     color: #007BFF;
 }
+
+@media all and (max-width: 1350px) {
+    article {
+        flex-direction: column;
+    }
+}

@@ -27,3 +27,13 @@ h2 {
 re-captcha {
     margin-bottom: 10px;
 }
+
+@media all and (max-width: 1350px) {
+    main {
+        flex-direction: column;
+    }
+
+    iframe {
+        width: 450px;
+    }
+}

@@ -51,3 +51,9 @@ article a:hover {
     margin-left: 10px;
     cursor: pointer;
 }
+
+@media all and (max-width: 1350px) {
+    article {
+        flex-direction: column;
+    }
+}
