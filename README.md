@@ -16,7 +16,7 @@ You can run the app in the development mode.\
 Download the project and run commands "npm install" and "ng s"\
 Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
 
-### [sram-bg.web.app](https://sram-bg.web.app)
+### [sram-bg-angular.web.app](https://sram-bg-angular.web.app)
 
 Or you could use the link above. Free hosting is provided by Firebase.
 

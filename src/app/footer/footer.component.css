@@ -71,3 +71,13 @@ a {
     color: #fff;
     text-decoration: none;
 }
+
+@media all and (max-width: 1350px) {
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .footer-top article {
+        margin-bottom: 20px;
+    }
+}

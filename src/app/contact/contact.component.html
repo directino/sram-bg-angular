@@ -1,23 +1,25 @@
 <main>
-    <section>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d366.89839543031013!2d23.369785000000004!3d42.636192!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x447f9dd693e57def!2sSoftUni!5e0!3m2!1sbg!2sbg!4v1628247697027!5m2!1sbg!2sbg"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </section>
-    <div class="form">
-        <h2><strong>Остави съобщение</strong></h2>
-        <form>
+  <section>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d366.89839543031013!2d23.369785000000004!3d42.636192!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x447f9dd693e57def!2sSoftUni!5e0!3m2!1sbg!2sbg!4v1628247697027!5m2!1sbg!2sbg"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+  <div class="form">
+    <h2><strong>Остави съобщение</strong></h2>
+    <form>
 
-          <input type="text" id="fname" name="firstname" placeholder="Име">
-      
-          <input type="text" id="lname" name="lastname" placeholder="Имейл">
+      <input type="text" id="fname" name="firstname" placeholder="Име">
 
-          <input type="text" id="lname" name="lastname" placeholder="Телефон">
-      
-          <textarea id="subject" name="subject" placeholder="Съобщение" style="height:200px"></textarea>
-      
-          <input type="submit" value="ИЗПРАТИ">
-      
-        </form>
-      </div>
+      <input type="text" id="lname" name="lastname" placeholder="Имейл">
+
+      <input type="text" id="lname" name="lastname" placeholder="Телефон">
+
+      <textarea id="subject" name="subject" placeholder="Съобщение" style="height:120px"></textarea>
+
+      <re-captcha (resolved)="resolved($event)" siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></re-captcha>
+
+      <input type="submit" value="ИЗПРАТИ">
+
+    </form>
+  </div>
 </main>
