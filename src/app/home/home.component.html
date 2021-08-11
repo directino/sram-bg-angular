@@ -5,7 +5,7 @@
             стена на срама! Вече сте сте били измамен? Предупредете за безсрамника тук и помогнете на бъдещите жертви.
         </p>
     </div>
-    <article *ngFor="let scammer of scammers | async">
+    <article *ngFor="let scammer of scammers | async | reverse">
         <p>Име: {{scammer.firstName}} {{scammer.secondName}}, Град/село: {{scammer.city}}, Тел. {{scammer.phone}}</p>
         <a [routerLink]="['/scammers', scammer.id]">Описание</a>
     </article>

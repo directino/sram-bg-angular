@@ -18,6 +18,7 @@ import { CreateComponent } from './create/create.component';
 import { ContactComponent } from './contact/contact.component';
 import { EditComponent } from './edit/edit.component';
 import { RecaptchaModule } from "ng-recaptcha";
+import {NgPipesModule} from 'ngx-pipes';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { RecaptchaModule } from "ng-recaptcha";
     UserModule,
     FormsModule,
     RecaptchaModule,
+    NgPipesModule,
     AppRoutingModule,
     // AngularFireModule.initializeApp(environment.firebase),
   ],
