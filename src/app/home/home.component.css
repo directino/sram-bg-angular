@@ -21,7 +21,7 @@
     padding-bottom: 60px;
 }
 
-article {
+.info {
     background: #007BFF;
     display: flex;
     margin: 10px auto;
@@ -34,7 +34,7 @@ article {
     box-shadow: 2px 2px 5px 0px gray;
 }
 
-article a {
+.info a {
     text-decoration: none;
     color: white;
     border: white 1px solid;
@@ -42,13 +42,29 @@ article a {
     padding: 8px 16px;
 }
 
-article a:hover {
+.info a:hover {
     background: white;
     color: #007BFF;
 }
 
+input {
+    width: 60%;
+    display: block;
+    margin: auto;
+    padding: 10px 26px;
+    margin-top: 10px;
+    border-radius: 6px;
+    font-size: 15px;
+    border: #007BFF solid 1px;
+}
+
+input:focus {
+    outline: none;
+    border: #007BFF solid;
+  }
+
 @media all and (max-width: 1350px) {
-    article {
+    .info {
         flex-direction: column;
     }
 }

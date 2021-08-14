@@ -10,7 +10,7 @@ This project is created by a software engineering student at SoftUni. The purpos
 
 ## How to Access the App
 
-### download + npm install + npm start
+### download + npm install + ng s
 
 You can run the app in the development mode.\
 Download the project and run commands "npm install" and "ng s"\

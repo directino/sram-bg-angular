@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  email: any;
+  password: any;
+  repeatPassword: any;
 
-  ngOnInit(): void {
+  constructor(public authService: UserService, private _location: Location) { }
+
+  ngOnInit() {}
+
+  backClicked() {
+    this._location.back();
   }
 
 }

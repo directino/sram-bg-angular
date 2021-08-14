@@ -1,1 +1,36 @@
-<p>profile works!</p>
+<div class="container">
+    <div class="brand-title">Профил</div>
+    <form #formData='ngForm' class="inputs">
+      <label for="email">Имейл</label>
+      <input type="email" name="email" ngModel #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required
+        placeholder="Въведете новия имейл..." autocomplete="on" />
+  
+      <div *ngIf="email.touched">
+        <p *ngIf="email.errors?.required">Полето е задължително!</p>
+        <p *ngIf="email.errors?.pattern">Това не е валиден имейл!</p>
+      </div>
+  
+      <label for="password">Парола</label>
+      <input ngModel #password="ngModel" type="password" name="password" placeholder="Мин 6 символа" required
+        minlength="6" autocomplete="on" />
+  
+  
+      <div *ngIf="password.touched">
+        <p *ngIf="password.errors?.required">Полето за парола не трябва да е празно!</p>
+        <p *ngIf="password.errors?.minlength">Паролата трябва да е минимум 6 символа!</p>
+      </div>
+  
+      <label for="repeatPassword">Повторете паролата</label>
+      <input ngModel #repeatPassword="ngModel" type="password" name="repeatPassword" placeholder="Мин 6 символа" required
+        minlength="6" autocomplete="on" />
+  
+        <div *ngIf="repeatPassword.touched">
+          <p *ngIf="repeatPassword.errors?.required">Полето за парола не трябва да е празно!</p>
+          <p *ngIf="repeatPassword.errors?.minlength">Паролата трябва да е минимум 6 символа!</p>
+        </div>
+  
+      <button type="submit">ПРОМЯНА</button>
+    </form>
+    <br>
+    <a (click)="backClicked()">Назад</a>
+  </div>

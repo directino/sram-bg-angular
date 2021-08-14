@@ -5,8 +5,16 @@
             стена на срама! Вече сте сте били измамен? Предупредете за безсрамника тук и помогнете на бъдещите жертви.
         </p>
     </div>
+    <input type="text" ngModel #searchBox="ngModel" name="searchBox" placeholder="Търси по име, град, телефон или описание...">
     <article *ngFor="let scammer of scammers | async | reverse">
-        <p>Име: {{scammer.firstName}} {{scammer.secondName}}, Град/село: {{scammer.city}}, Тел. {{scammer.phone}}</p>
-        <a [routerLink]="['/scammers', scammer.id]">Описание</a>
+        <div class="info" *ngIf="searchBox.value == '' || 
+        scammer.firstName.includes(searchBox.value) ||
+        scammer.secondName.includes(searchBox.value) ||
+        scammer.city.includes(searchBox.value) ||
+        scammer.description.includes(searchBox.value) ||
+        scammer.phone.includes(searchBox.value)">
+            <p>Име: {{scammer.firstName}} {{scammer.secondName}}, Град/село: {{scammer.city}}, Тел. {{scammer.phone}}</p>
+            <a [routerLink]="['/scammers', scammer.id]">Описание</a>
+        </div>
     </article>
 </div>
